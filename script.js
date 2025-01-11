@@ -1,16 +1,42 @@
-const ROCK = 0;
-const PAPER = 1;
-const SCISSOR = 2;
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
-    return Math.floor(Math.random() * 3)
+    let n = Math.floor(Math.random() * 3);
+    let str = ""
+    if (n === 0) {
+        return "PIEDRA";
+    } else if (n === 1) {
+        return "PAPEL";
+    } else {
+        return "TIJERA";
+    }
 }
 
 function getHumanChoice() {
-    let n = prompt("Introduce un número entre 0 y 2");
-    if (n < 0 || n > 2) {
-        alert("Número no válido");
+    let op = prompt("Introduce piedra, papel o tijera. (piedra por defecto)");
+    op = op.toUpperCase();
+
+    if (op != "PIEDRA" || op != "PAPEL" || op != "TIJERA") {
+        return "PIEDRA"
     } else {
-        return parseInt(n);
+        return op;
+    }
+}
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "PIEDRA" && computerChoice === "TIJERAS" ||
+        humanChoice === "PAPEL" && computerChoice === "PIEDRA" ||
+        humanChoice === "TIJERAS" && computerChoice === "PAPEL") {
+        console.log(`Has ganado! ${humanChoice} gana a ${computerChoice}`)
+        humanScore++;
+    }
+    else if (computerChoice === "PIEDRA" && humanChoice === "TIJERAS" ||
+        computerChoice === "PAPEL" && humanChoice === "PIEDRA" ||
+        computerChoice === "TIJERAS" && humanChoice === "PAPEL") {
+        console.log(`Has perdido! ${humanChoice} pierde contra ${computerChoice}`)
+        computerScore++;
+    } else {
+        console.log("Has empatado!!!")
     }
 }
