@@ -16,7 +16,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     let op = prompt("Introduce piedra, papel o tijera. (piedra por defecto)");
     op = op.toUpperCase();
-    if (op != "PIEDRA" || op != "PAPEL" || op != "TIJERA") {
+    if (op != "PIEDRA" && op != "PAPEL" && op != "TIJERA") {
         return "PIEDRA"
     } else {
         return op;
