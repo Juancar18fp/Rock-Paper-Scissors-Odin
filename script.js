@@ -16,7 +16,6 @@ function getComputerChoice() {
 function getHumanChoice() {
     let op = prompt("Introduce piedra, papel o tijera. (piedra por defecto)");
     op = op.toUpperCase();
-
     if (op != "PIEDRA" || op != "PAPEL" || op != "TIJERA") {
         return "PIEDRA"
     } else {
@@ -25,15 +24,15 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    if (humanChoice === "PIEDRA" && computerChoice === "TIJERAS" ||
+    if (humanChoice === "PIEDRA" && computerChoice === "TIJERA" ||
         humanChoice === "PAPEL" && computerChoice === "PIEDRA" ||
-        humanChoice === "TIJERAS" && computerChoice === "PAPEL") {
+        humanChoice === "TIJERA" && computerChoice === "PAPEL") {
         console.log(`Has ganado! ${humanChoice} gana a ${computerChoice}`)
         humanScore++;
     }
-    else if (computerChoice === "PIEDRA" && humanChoice === "TIJERAS" ||
+    else if (computerChoice === "PIEDRA" && humanChoice === "TIJERA" ||
         computerChoice === "PAPEL" && humanChoice === "PIEDRA" ||
-        computerChoice === "TIJERAS" && humanChoice === "PAPEL") {
+        computerChoice === "TIJERA" && humanChoice === "PAPEL") {
         console.log(`Has perdido! ${humanChoice} pierde contra ${computerChoice}`)
         computerScore++;
     } else {
