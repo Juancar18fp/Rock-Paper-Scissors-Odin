@@ -1,8 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+body {
+    background: #393E46;
+}
+
+button {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
 }
 
 .header {
@@ -16,9 +32,28 @@ body {
     height: 150px;
 }
 
-.press-start-2p-regular {
-    font-family: "Press Start 2P", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    gap: 50px;
+}
+
+.btn {
+    background-color: #50565F;
+    border-radius: 10px;
+}
+
+.sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 160px;
+    font-size: 90px;
+}
+
+.btn:hover {
+    background-color: #6B717D;
+}
