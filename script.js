@@ -39,26 +39,3 @@ function playRound(humanChoice, computerChoice) {
         console.log("Has empatado la ronda!!!")
     }
 }
-
-function playGame(){
-    const ROUNDS = 5;
-    let actualRound = 1;
-
-    while(actualRound <= ROUNDS){
-        console.log("EMPIEZA LA RONDA NÚMERO "+actualRound);
-        playRound(getHumanChoice(),getComputerChoice());
-        console.log(`PUNTOS -> Tú: ${humanScore}, Máquina: ${computerScore}`)
-        actualRound++;
-        console.log("")
-    }
-
-    if(humanScore > computerScore){
-        console.log("¡ENHORABUENA! HAS GANADO LA PARTIDA")
-    } else if (computerScore > humanScore){
-        console.log("VAYA!!! LA MÁQUINA TE HA GANADO LA PARTIDA");
-    } else {
-        console.log("HABÉIS EMPATADA LA PARTIDA ¡QUE ABURRIDO!")
-    }
-}
-
-playGame();
