@@ -57,3 +57,33 @@ button {
 .btn:hover {
     background-color: #6B717D;
 }
+
+.score-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score-container {
+    font-family: "Roboto", serif;
+    color: #EEEEEE;
+    font-size: 30px;
+    font-weight: bold;
+}
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.winner-text {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.block  {
+    display: block;
+}

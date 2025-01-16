@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="normalize.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Piedra Papel Tijera</title>
 </head>
 
@@ -15,15 +14,28 @@
         Piedra Papel Tijera
     </div>
     <div class="buttons">
-        <button class="btn" id="rockBtn">
-            <div class="sign">✊</div>
+        <button class="btn">
+            <div class="sign" id="scissorsBtn">✊</div>
         </button>
-        <button class="btn" id="paperBtn">
-            <div class="sign">✋</div>
+        <button class="btn">
+            <div class="sign" id="scissorsBtn">✋</div>
         </button>
-        <button class="btn" id="scissorsBtn">
-            <div class="sign">✌</div>
+        <button class="btn">
+            <div class="sign" id="scissorsBtn">✌</div>
         </button>
+    </div>
+    <div class="score-container">
+        <div class="player-score score">
+            <div>Jugador</div>
+            <div class="player-score-num">0</div>
+        </div>
+        <div class="winner-text">
+            ¿ESTÁS PREPARADO?
+        </div>
+        <div class="cpu-score score">
+            <div>Máquina</div>
+            <div class="cpu-score-num">0</div>
+        </div>
     </div>
 </body>
 
