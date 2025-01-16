@@ -30,7 +30,9 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     const text = document.querySelector(".winner-text");
     if (computerScore >= 5 || humanScore >= 5) {
-        
+        const playAgain = document.querySelector(".play-again");
+        playAgain.style.cssText = "visibility: visible;";
+        text.textContent = humanScore===5 ? "HAS GANADO LA PARTIDA ¡¡¡ENHORABUENA!!!" : "HAS PERDIDO LA PARTIDA";
     } else {
         if (humanChoice === PIEDRA && computerChoice === TIJERA ||
             humanChoice === PAPEL && computerChoice === PIEDRA ||
