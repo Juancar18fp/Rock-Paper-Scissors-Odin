@@ -5,9 +5,15 @@ const PIEDRA = "PIEDRA";
 const PAPEL = "PAPEL";
 const TIJERA = "TIJERA";
 
+const text = document.querySelector(".winner-text");
+const playAgain = document.querySelector(".play-again");
+const playerScore = document.querySelector(".player-score-num");
+const cpuScore = document.querySelector(".cpu-score-num");
+const buttons = document.querySelectorAll(".signbtn");
+const playAgainButton = document.querySelector(".reset");
+
 function getComputerChoice() {
     let n = Math.floor(Math.random() * 3);
-    let str = ""
     if (n === 0) {
         return PIEDRA;
     } else if (n === 1) {
@@ -28,9 +34,7 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    const text = document.querySelector(".winner-text");
     if (computerScore >= 5 || humanScore >= 5) {
-        const playAgain = document.querySelector(".play-again");
         playAgain.style.cssText = "visibility: visible;";
         text.textContent = humanScore===5 ? "HAS GANADO LA PARTIDA ¡¡¡ENHORABUENA!!!" : "HAS PERDIDO LA PARTIDA";
     } else {
@@ -48,14 +52,14 @@ function playRound(humanChoice, computerChoice) {
         } else {
             text.textContent = "Has empatado la ronda!!!";
         }
-        const playerScore = document.querySelector(".player-score-num");
-        const cpuScore = document.querySelector(".cpu-score-num");
-        playerScore.textContent = humanScore;
-        cpuScore.textContent = computerScore;
+        setScore();
     }
 }
 
-const buttons = document.querySelectorAll(".btn");
+function setScore(){
+    playerScore.textContent = humanScore;
+    cpuScore.textContent = computerScore;
+}
 
 buttons.forEach((button) => {
     button.addEventListener("click", function (e) {
@@ -67,4 +71,13 @@ buttons.forEach((button) => {
             playRound(TIJERA, getComputerChoice());
         }
     });
+});
+
+
+playAgainButton.addEventListener("click", ()=> {
+    text.textContent = "¿ESTÁS PREPARADO?";
+    humanScore = 0;
+    computerScore = 0;
+    playAgain.style.cssText = "visibility: hidden;";
+    setScore();
 });
